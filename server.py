@@ -12,9 +12,25 @@ logger = logging.getLogger(__name__)
 mcp = FastMCP(name="calculator")
 
 @mcp.tool
+def sum(a: float, b: float) -> float:
+    """Sum two numbers together."""
+    return a + b
+
+@mcp.tool
 def multiply(a: float, b: float) -> float:
     """Multiplies two numbers together."""
     return a * b
+
+@mcp.tool
+def subtract(a: float, b: float) -> float:
+    """Subtract two numbers together."""
+    return a - b
+
+@mcp.tool
+def divide(a: float, b: float) -> float:
+    """Divide two numbers together."""
+    return a / b
+
 
 if __name__ == "__main__":
     # 환경 변수에서 설정 읽기 (기본값 제공)
